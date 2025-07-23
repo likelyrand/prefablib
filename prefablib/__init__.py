@@ -1,5 +1,5 @@
 """
-A library for modifying Cities Skylines 2 asset .Prefab files
+A library for modifying Cities Skylines 2 .Prefab files.
 """
 __name__ = "prefablib"
 __version__ = "1.0.0"
