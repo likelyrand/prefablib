@@ -26,17 +26,32 @@ def reads_dict(string: str) -> dict:
 
     data = json.loads(fixed_string)
 
+    def process(item):
+
+        if isinstance(item, dict):
+            if "$type" in item and isinstance(item["$type"], str):
+                item["$type"] = item["$type"][item["$type"].find("|")+1:]
+
+            for child in item.values():
+                process(child)
+
+        elif isinstance(item, list):
+            for child in item:
+                process(child)
+
+    process(data)
+
     return data
 
 def from_dict(data: dict) -> P:
     
     if "$type" in data:
 
-        if data["$type"] == "0|Game.Prefabs.BuildingPrefab, Game":
+        if data["$type"] == "Game.Prefabs.BuildingPrefab, Game":
 
             return BuildingPrefab().from_dict(data)
         
-        elif data["$type"] == "0|Game.Prefabs.BuildingExtensionPrefab, Game":
+        elif data["$type"] == "Game.Prefabs.BuildingExtensionPrefab, Game":
             
             return BuildingExtensionPrefab().from_dict(data)
 
