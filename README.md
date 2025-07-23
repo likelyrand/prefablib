@@ -36,3 +36,5 @@ prefab = prefablib.read(fp="path/to/file")
 print(prefab.name)
 
 ```
+
+You can also use this library without any objects, see [this](example3.py).
