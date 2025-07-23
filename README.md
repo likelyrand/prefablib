@@ -1,11 +1,11 @@
 ## prefablib
 
-This is a small python library to easily modify Cities Skylines 2 .Prefab files with OOP.
+This is a small python library to easily modify Cities Skylines 2 .Prefab files.
 It's very unfinished and only has 2 components out of, like, 200 or something? But the basic things are finished.
 
 You can read .Prefab files mostly without errors and you can write to said files, you can also modify attributes easily.
 
-This will probably not be published to PyPi, ever. But you can freely contribute and fork it if you choose to do so.
+This will probably not be published to PyPi, but you can freely contribute and fork this project.
 
 Examples:
 
@@ -33,6 +33,6 @@ import prefablib
 
 prefab = prefablib.read(fp="path/to/file")
 
-print("prefab.name")
+print(prefab.name)
 
 ```
