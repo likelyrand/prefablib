@@ -44,8 +44,6 @@ def reads(string: str) -> P:
 
     data = reads_dict(string)
 
-    print(data)
-
     return from_dict(data=data)
 
 
@@ -56,11 +54,8 @@ def read(fp: str) -> tuple[P, str]:
 
     with open(fp, "r") as f:
         string = f.read()
-    fixed_string = re.sub(r'\$fstrref:"([^"]*)"', r'"$fstrref:\1"', string)
 
-    data = json.loads(fixed_string)
-
-    return from_dict(data=data)
+    return reads(string=string)
 
 
 def encode(data, cur: int = 1):
