@@ -144,7 +144,7 @@ def assign_ids(data: dict):
 
 def dumps(prefab: P) -> dict:
 
-    data = prefab.to_dict()
+    data = prefab.dict()
 
     data = assign_ids(data)
 
@@ -155,7 +155,7 @@ def dumps(prefab: P) -> dict:
 
 def dump(fp: str, prefab: P) -> None:
 
-    data = prefab.to_dict()
+    data = prefab.dict()
 
     data = assign_ids(data)
 
